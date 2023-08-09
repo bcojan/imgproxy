@@ -28,6 +28,18 @@ imgproxy reads some amount of bytes to check if the source image is SVG. By defa
 
 * `IMGPROXY_MAX_SVG_CHECK_BYTES`: the maximum number of bytes imgproxy will read to recognize SVG. If imgproxy can't recognize your SVG, try to increase this number. Default: `32768` (32KB)
 
+## HEIC support
+
+imgproxy supports HEIC only when using libvips 8.8.0+. Official imgproxy Docker image supports HEIC out of the box.
+
+By default, imgproxy saves HEIC images as JPEG. You need to explicitly specify the `format` option to get HEIC output.
+
+## BMP support
+
+imgproxy supports BMP only when using libvips 8.7.0+ compiled with ImageMagick support. Official imgproxy Docker image supports ICO out of the box.
+
+By default, imgproxy saves BMP images as JPEG. You need to explicitly specify the `format` option to get BMP output.
+
 ## Animated images support
 
 Since the processing of animated images is a pretty heavy process, only one frame is processed by default. You can increase the maximum of animation frames to process with the following variable:
